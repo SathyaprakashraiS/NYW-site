@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fireworks Celebration</title>
+  <style>
+  body {
+  	background: #0000FF ;
+	/*
+	background: black url(https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7806106/full-moon-clipart-md.png) no-repeat;
+	background-position: 20vw 25vh;
+	background-size: 140px auto;
+	overflow: hidden;
+	*/
+}
+
+a {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	display: inline-block;
+	margin: 20px;
+	font-size: 12px;
+	font-family: sans-serif;
+	letter-spacing: 2px;
+}
+a:link {
+	color: white;
+}
+a:visited {
+	color: white;
+}
+a:hover {
+	color: white;
+}
+a:active {
+	color: white;
+}
+
+#icon1, #icon2 {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+#icon2 {
+	-webkit-animation: 'change-icon' 0.5s linear infinite alternate;
+}
+
+@-webkit-keyframes 'change-icon' {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+canvas {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+  </style>
+</head>
+<body>
+	<!--
+  <a href="https://apod.nasa.gov/apod/ap230706.html">Inspired by <br>NASA Astronomy Picture of the Day</a>
+<div id='icon1'>
+	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" fill='white'><path d="M468-240q-96-5-162-74t-66-166q0-100 70-170t170-70q97 0 166 66t74 163l-63-20q-11-64-60-106.5T480-660q-75 0-127.5 52.5T300-480q0 67 42.5 116.5T449-303l19 63ZM821-60 650-231 600-80 480-480l400 120-151 50 171 171-79 79Z"/></svg>
+</div>
+<div id='icon2'>
+<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" fill='white'><path d="M468-240q-96-5-162-74t-66-166q0-100 70-170t170-70q97 0 166 66t74 163l-63-20q-11-64-60-106.5T480-660q-75 0-127.5 52.5T300-480q0 67 42.5 116.5T449-303l19 63Zm48 158q-9 1-18 1.5t-18 .5q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 9-.5 18t-1.5 18l-58-18v-18q0-142-99-241t-241-99q-142 0-241 99t-99 241q0 142 99 241t241 99h18l18 58Zm305 22L650-231 600-80 480-480l400 120-151 50 171 171-79 79Z"/></svg>
+</div>
+-->
+<h1>
+	SATHYA
+</h1>
+
+<canvas id="fireworkCanvas"></canvas>
+  <script>
+  	const particleCount = 150;
+const colors = ["#f9ff44", "#83fffb", "#54ff44", "Pink", "Blue", "Orange", "#ae3dff"];
+const particles = [];
+
+const canvas = document.getElementById('fireworkCanvas');
+const ctx = canvas.getContext('2d');
+
+class Particle {
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.radius = Math.random() * 2.5 + 1;
+		this.velocity = {
+      x: Math.random() * 1.4 - 1.4/2,
+      y: Math.random() * 1.4 - 1.4/2
+    };
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+		ctx.globalAlpha = 0.6;
+    ctx.closePath();
+    ctx.fill();
+  }
+  update() {
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
+    this.radius -= 0.01;
+    this.draw();
+  }
+}
+
+function createFirework(x, y) {
+	const color = colors[Math.floor(Math.random() * colors.length)];
+  for (let i = 0; i < particleCount; i++) {
+    const particle = new Particle(x, y, color);
+    particles.push(particle);
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].update();
+    if (particles[i].radius <= 0.9 || Math.pow(particles[i].velocity.x, 2) + Math.pow(particles[i].velocity.y, 2) > 0.5) {
+      particles.splice(i, 1);
+      i--;
+    }
+  }
+  requestAnimationFrame(animate);
+}
+
+canvas.addEventListener('click', function(event) {
+	canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+  createFirework(mouseX, mouseY);
+});
+
+function createRandomFirework() {
+	canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+	createFirework(Math.random()*window.innerWidth, Math.random()*window.innerHeight);
+}
+
+animate();
+
+setInterval(function() {
+  if(document.hasFocus())
+		createRandomFirework();
+	}
+, 2700-window.innerWidth);
+  </script>
+</body>
+</html>

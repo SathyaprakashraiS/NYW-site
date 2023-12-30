@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fireworks Celebration</title>
+  <title>HAPPY NEWYEAR</title>
   <style>
   body
   {
@@ -15,19 +15,17 @@
     align-items: center;
     background: #020202;
   }
-canvas {
- display: block;
-}
 .main
 {
   position: absolute;
   width: 90%; /* Adjust the width of the centered div */
   padding: 10px;
+  top: 0.1%;
   text-align: center;
   /*background-color: #000000;*/
   font-size: 2em;
-  -webkit-user-select: none;
-       user-select: none;
+ /* -webkit-user-select: none;
+       user-select: none;*/
 }
 @media (max-width: 1199.98px)
   {
@@ -39,8 +37,9 @@ canvas {
         text-align: center;
         /*background-color: #000000;*/
         font-size: 70%;
-        -webkit-user-select: none;
-       user-select: none;
+        top: 15%;
+        /*-webkit-user-select: none;
+       user-select: none;*/
       }
       .line1 {
        /*position: absolute;
@@ -51,8 +50,8 @@ canvas {
        font-family: 'Brush Script MT', cursive;
        font-size: 150%;
        font-weight: 500;
-       -webkit-user-select: none;
-       user-select: none;
+       /*-webkit-user-select: none;
+       user-select: none;*/
       }
       .line2
       {
@@ -64,103 +63,11 @@ canvas {
        font-family: 'Brush Script MT', cursive;
        font-size: 150%;
        font-weight: 500;
-       -webkit-user-select: none;
-       user-select: none;
+       /*-webkit-user-select: none;
+       user-select: none;*/
       }
   }
-/*
-.main
-{
-  position: absolute;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00FF00;
-}*/
-/*
-h1 {
- position: absolute;
- top: 30%;
- left: auto;
- color: #f4f5f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 500%;
- font-weight: 800;
- -webkit-user-select: none;
- user-select: none;
-}
-*/
-h1 {
-  color: #f4f6f7;
-  font-family: 'Brush Script MT', cursive;
-}
-p {
-  color: #f4f6f7;
-  font-size: 80%;
-  font-family: 'Brush Script MT', cursive;
-}
-/*h2 {
- position: absolute;
- top: 60%;
- left: 50%;
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 1.5em;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-h3
-{
- position: absolute;
- top: 65%;
- left: 50%;
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 1.5em;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}*/
-.line1 {
- /*position: absolute;
- top: 60%;
- left: 50%;*/
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 150%;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-.msg {
-  color: black;
-}
-.line2
-{
- /*position: absolute;
- top: 65%;
- left: 50%;*/
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 150%;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-.random-text {
-      font-size: 2em;
-      color: #333;
-    }
-    .message-box {
+  .message-box {
       position: absolute;
       bottom: 20px; /* Adjust the distance from the bottom */
       right: 20px; /* Adjust the distance from the right */
@@ -174,242 +81,199 @@ h3
       text-align: center;
       display: none;
     }
+    h1 {
+  color: #f4f6f7;
+  font-family: 'Brush Script MT', cursive;
+}
+h2 {
+  color: #f4f6f7;
+  font-size: 80%;
+  font-family: 'Brush Script MT', cursive;
+}
+p {
+  color: #f4f6f7;
+  font-size: 80%;
+  font-family: 'Brush Script MT', cursive;
+}
+
+a {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	display: inline-block;
+	/*margin: 20px;*/
+	/*font-size: 12px;*/
+	font-family: sans-serif;
+	/*letter-spacing: 2px;*/
+}
+a:link {
+	color: white;
+}
+a:visited {
+	color: white;
+}
+a:hover {
+	color: white;
+}
+a:active {
+	color: white;
+}
+
+canvas {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+h2
+{
+color: #FFFFFF;
+  font-size: 80%;
+  font-family: 'Brush Script MT', cursive;
+}
+p{
+  color: #000000;
+  font-size: 80%;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.container {
+      max-width: 600px; /* Set a maximum width for content */
+      margin: 0 auto; /* Center the content horizontally */
+      padding: 5px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background-color: #FFFFFF;
+      /*padding: 2px;*/
+    }
+
+    .image-box {
+      background-color: #000000;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%; /* Make the image responsive */
+      display: block;
+    }
+
+    .image-description {
+      /*padding: 20px;*/
+      text-align: center;
+    }
+
+    .image-description h2 {
+      /*font-size: 1.5em;*/
+      /*margin-bottom: 10px;*/
+    }
+
+    .image-description p {
+      /*font-size: 1.1em;
+      line-height: 1.6;*/
+    }
+
   </style>
 </head>
 <body>
-  <!--<h1>Happy New Year 2024</h1>-->
-  <div class="main">
+<div class="main">
   <h1>HAPPY NEW YEAR 2024 !</h1>
-  <p id="randomText">sad</p>
-  <!-- <p id="randomText2">asd</p> -->
+  <!-- <h2>SATHYA</h2> -->
+  <!-- <p>qweqweqwe</p> -->
+  <!-- <p><a href="testpanrenda.html">button</a></p> -->
+  <!-- <img src="1.jpg">
+  <p>test panren da deisd asd asd asd asd areqwe fwefw ewh qehwf kqhwev rkewqhjb kreqwjhb rkwqejhb rkeqwjhb krweqhbk rhweqb khrewvq krjhwqevk rjhvweqk rqewjk rgkqweh rgqewhg rkjweqhg rkqwehg rjqhewvkrjhewvkjrhvwekh rweq jhrvewqkjh rkewqjh rwqejh rkwqejhk rewqjhb krjqwehb rhweqb kjrhbewk jhrbqewkj rbkjwe brqewhb rkjwqeb rjwehb krjheqwb jkrbqewk rjhbqewkj rhwqke bkwqejr </p> -->
+  <div class="container">
+    <div class="image-box">
+      <img src="porul/3.jpg" alt="Image Description">
+      <div class="image-description">
+        <h2>Title for the Image</h2>
+      </div>
+    </div>
   </div>
-  <div class="message-box" id="potti">
-    <!-- <h3>Message Box</h3> -->
-    <p class="msg">asd</p>
-  </div>
-  <!--<h2>Let this year be the year you go after progress over perfection and</h2>
-  <h3>savor every victory you make along the way to your goals</h3>-->
-  <!--
-  <div class="line1" id="randomText"></div>
-  <div class="line2" id="randomText2"></div>
-  -->
-<canvas id="newyearwishes"></canvas>
-  <script>
-    function toggleMessageBoxRandomly() {
-      var messageBox = document.getElementById('potti');
-      var randomNumber = Math.random(); // Generate a random number between 0 and 1
+  <p style="color: #FFFFFF;">Description describing the image goes here. This paragraph can contain information about the image or anything related.</p>
+</div>
+<canvas id="fireworkCanvas"></canvas>
 
-      // Show the message box with a 30% probability (adjust probability as needed)
-      if (randomNumber < 0.3) {
-        messageBox.style.display = 'block';
-      } else {
-        messageBox.style.display = "none";
-      }
-    }
+<script>
+  	const particleCount = 200;
+const colors = ["#f9ff44", "#83fffb", "#54ff44", "Pink", "Blue", "Orange", "#ae3dff","white","#00FF00","#FF0000","#0000FF"];
+const particles = [];
 
-    // Call the function initially or on some event (e.g., page load, button click, etc.)
-    toggleMessageBoxRandomly();
-    // helper functions
-const PI2 = Math.PI * 2;
-const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
-const timestamp = (_) => new Date().getTime();
+const canvas = document.getElementById('fireworkCanvas');
+const ctx = canvas.getContext('2d');
 
-// container
-class Newyearwishes {
- constructor() {
-  this.resize();
-
-  // create a lovely place to store the firework
-  this.fireworks = [];
-  this.counter = 0;
- }
-
- resize() {
-  this.width = canvas.width = window.innerWidth;
-  let center = (this.width / 2) | 0;
-  this.spawnA = (center - center / 4) | 0;
-  this.spawnB = (center + center / 4) | 0;
-
-  this.height = canvas.height = window.innerHeight;
-  this.spawnC = this.height * 0.1;
-  this.spawnD = this.height * 0.5;
- }
-
- onClick(evt) {
-  let x = evt.clientX || (evt.touches && evt.touches[0].pageX);
-  let y = evt.clientY || (evt.touches && evt.touches[0].pageY);
-
-  let count = random(3, 5);
-  for (let i = 0; i < count; i++)
-   this.fireworks.push(
-    new Firework(
-     random(this.spawnA, this.spawnB),
-     this.height,
-     x,
-     y,
-     random(0, 260),
-     random(30, 110)
-    )
-   );
-
-  this.counter = -1;
- }
-
- update(delta) {
-  ctx.globalCompositeOperation = "hard-light";
-  ctx.fillStyle = `rgba(20,20,20,${7 * delta})`;
-  ctx.fillRect(0, 0, this.width, this.height);
-
-  ctx.globalCompositeOperation = "lighter";
-  for (let firework of this.fireworks) firework.update(delta);
-
-  // if enough time passed... create new new firework
-  this.counter += delta * 3; // each second
-  if (this.counter >= 1) {
-   this.fireworks.push(
-    new Firework(
-     random(this.spawnA, this.spawnB),
-     this.height,
-     random(0, this.width),
-     random(this.spawnC, this.spawnD),
-     random(0, 360),
-     random(30, 110)
-    )
-   );
-   this.counter = 0;
+class Particle {
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.radius = Math.random() * 5 + 1;
+		this.velocity = {
+      x: Math.random() * 1.4 - 1.4/2,
+      y: Math.random() * 1.4 - 1.4/2
+    };
   }
-
-  // remove the dead fireworks
-  if (this.fireworks.length > 1000)
-   this.fireworks = this.fireworks.filter((firework) => !firework.dead);
- }
-}
-
-class Firework {
- constructor(x, y, targetX, targetY, shade, offsprings) {
-  this.dead = false;
-  this.offsprings = offsprings;
-
-  this.x = x;
-  this.y = y;
-  this.targetX = targetX;
-  this.targetY = targetY;
-
-  this.shade = shade;
-  this.history = [];
- }
- update(delta) {
-  if (this.dead) return;
-
-  let xDiff = this.targetX - this.x;
-  let yDiff = this.targetY - this.y;
-  if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) {
-   // is still moving
-   this.x += xDiff * 2 * delta;
-   this.y += yDiff * 2 * delta;
-
-   this.history.push({
-    x: this.x,
-    y: this.y
-   });
-
-   if (this.history.length > 20) this.history.shift();
-  } else {
-   if (this.offsprings && !this.madeChilds) {
-    let babies = this.offsprings / 2;
-    for (let i = 0; i < babies; i++) {
-     let targetX =
-      (this.x + this.offsprings * Math.cos((PI2 * i) / babies)) | 0;
-     let targetY =
-      (this.y + this.offsprings * Math.sin((PI2 * i) / babies)) | 0;
-
-     newyearwishes.fireworks.push(
-      new Firework(this.x, this.y, targetX, targetY, this.shade, 0)
-     );
-    }
-   }
-   this.madeChilds = true;
-   this.history.shift();
-  }
-
-  if (this.history.length === 0) this.dead = true;
-  else if (this.offsprings) {
-   for (let i = 0; this.history.length > i; i++) {
-    let point = this.history[i];
+  draw() {
     ctx.beginPath();
-    ctx.fillStyle = "hsl(" + this.shade + ",100%," + i + "%)";
-    ctx.arc(point.x, point.y, 1, 0, PI2, false);
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+		ctx.globalAlpha = 0.6;
+    ctx.closePath();
     ctx.fill();
-   }
-  } else {
-   ctx.beginPath();
-   ctx.fillStyle = "hsl(" + this.shade + ",100%,50%)";
-   ctx.arc(this.x, this.y, 1, 0, PI2, false);
-   ctx.fill();
   }
- }
+  update() {
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
+    this.radius -= 0.01;
+    this.draw();
+  }
 }
 
-let canvas = document.getElementById("newyearwishes");
-let ctx = canvas.getContext("2d");
+function createFirework(x, y) {
+	const color = colors[Math.floor(Math.random() * colors.length)];
+  for (let i = 0; i < particleCount; i++) {
+    const particle = new Particle(x, y, color);
+    particles.push(particle);
+  }
+}
 
-let then = timestamp();
-
-let newyearwishes = new Newyearwishes();
-window.onresize = () => newyearwishes.resize();
-document.onclick = (evt) => newyearwishes.onClick(evt);
-document.ontouchstart = (evt) => newyearwishes.onClick(evt);
-(function loop() {
- requestAnimationFrame(loop);
-
- let now = timestamp();
- let delta = now - then;
-
- then = now;
- newyearwishes.update(delta / 1000);
-})();
-
-// Array of random texts
-    const texts = [
-      "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
-      "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
-      "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
-      "As we step into this New Year, may it be filled with a symphony of laughter, a canvas of love, and a palette of dreams coming true! Here's to a spectacular and adventurous journey ahead.",
-      "May the coming year bless you with moments of laughter, warmth of love, and the joy of fulfillment. Embrace each day with a heart full of gratitude and a spirit of optimism.",
-      "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead. ",
-      "Here's to a year filled with new possibilities, exciting experiences, and moments that leave you speechless. May your New Year be sprinkled with joy, success, and endless blessings.",
-      "As the New Year unfolds, may it bring along countless reasons to smile, endless moments of delight, and opportunities that lead you to great heights. Wishing you a fantastic year ahead.",
-      "May the New Year be a blank book waiting for your adventures, filled with pages of love, accomplishments, and cherished memories. Wishing you a year that's nothing short of amazing. ",
-      "Cheers to the New Year! May it be a journey full of surprises, adventures, and beautiful moments shared with the ones you hold dear. Wishing you happiness and success. ",
-      // Add more text strings as needed
-    ];
-
-    const texts2 = [
-      "savor every victory you make along the way to your goals :) asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-      "Welcome to the magic of coding! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-      "Programming is fun! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-      "Keep learning and growing! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-      "The journey of a thousand miles begins with a single step. asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we"
-      // Add more text strings as needed
-    ];
-
-    var globalvalue=0
-    // Function to get a random text from the array
-    function getRandomText() {
-      const randomIndex = Math.floor(Math.random() * texts.length);
-      globalvalue=randomIndex
-      return texts[randomIndex];
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].update();
+    if (particles[i].radius <= 0.9 || Math.pow(particles[i].velocity.x, 2) + Math.pow(particles[i].velocity.y, 2) > 0.5) {
+      particles.splice(i, 1);
+      i--;
     }
-    function getRandomText2() {
-      return texts2[globalvalue];
-    }
+  }
+  requestAnimationFrame(animate);
+}
 
-    // Display a random text in the HTML element
-    const randomTextElement = document.getElementById('randomText');
-    randomTextElement.textContent = getRandomText();
+canvas.addEventListener('click', function(event) {
+	canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+  createFirework(mouseX, mouseY);
+});
 
-    const randomTextElement2 = document.getElementById('randomText2');
-    randomTextElement2.textContent = getRandomText2();
+function createRandomFirework() {
+	canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+	createFirework(Math.random()*window.innerWidth, Math.random()*window.innerHeight);
+}
+
+animate();
+
+setInterval(function() {
+  if(document.hasFocus())
+		createRandomFirework();
+	}
+, 2000-window.innerWidth);
   </script>
 </body>
 </html>

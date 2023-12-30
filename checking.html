@@ -2,57 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Randomly Visible Message Box</title>
+  <title>Responsive Image Description</title>
   <style>
-    /* Styles for body and message box remain the same as previously shown */
+    /* Styles for body remain the same as previously shown */
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      font-family: Arial, sans-serif;
       background-color: #f0f0f0;
-      position: relative;
     }
 
-    .message-box {
-      /* Styles for the message box remain the same as previously shown */
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 200px;
-      padding: 10px;
+    .container {
+      max-width: 800px; /* Set a maximum width for content */
+      margin: 0 auto; /* Center the content horizontally */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .image-box {
       background-color: #fff;
-      border-radius: 5px;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%; /* Make the image responsive */
+      display: block;
+    }
+
+    .image-description {
+      padding: 20px;
       text-align: center;
-      display: none; /* Initially hidden */
+    }
+
+    .image-description h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .image-description p {
+      font-size: 1.1em;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <div class="message-box" id="messageBox">
-    <h3>Message Box</h3>
-    <p>This message box is displayed randomly.</p>
+  <div class="container">
+    <div class="image-box">
+      <img src="1.jpg" alt="Image Description">
+      <div class="image-description">
+        <h2>Title for the Image</h2>
+        <p>Description describing the image goes here. This paragraph can contain information about the image or anything related.</p>
+      </div>
+    </div>
   </div>
-
-  <script>
-    // Function to toggle the visibility of the message box randomly
-    function toggleMessageBoxRandomly() {
-      var messageBox = document.getElementById('messageBox');
-      var randomNumber = Math.random(); // Generate a random number between 0 and 1
-
-      // Show the message box with a 30% probability (adjust probability as needed)
-      if (randomNumber < 0.3) {
-        messageBox.style.display = 'block';
-      } else {
-        messageBox.style.display = 'none';
-      }
-    }
-
-    // Call the function initially or on some event (e.g., page load, button click, etc.)
-    toggleMessageBoxRandomly();
-  </script>
 </body>
 </html>
+
 
 
 

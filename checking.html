@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Text</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .random-text {
+      font-size: 2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="random-text" id="randomText"></div>
+  <div class="random-text" id="randomText2"></div>
+
+  <script>
+    // Array of random texts
+    const texts = [
+      "Hello, World!",
+      "Welcome to the magic of coding!",
+      "Programming is fun!",
+      "Keep learning and growing!",
+      "The journey of a thousand miles begins with a single step."
+      // Add more text strings as needed
+    ];
+
+    const texts2 = [
+      "Hello, World!",
+      "Welcome to the magic of coding!",
+      "Programming is fun!",
+      "Keep learning and growing!",
+      "The journey of a thousand miles begins with a single step."
+      // Add more text strings as needed
+    ];
+
+    var globalValue = 0
+    // Function to get a random text from the array
+    function getRandomText() {
+      const randomIndex = Math.floor(Math.random() * texts.length);
+      globalValue = randomIndex
+      return texts[randomIndex];
+    }
+    function getRandomText2() {
+      return texts2[globalValue];
+    }
+
+    // Display a random text in the HTML element
+    const randomTextElement = document.getElementById('randomText');
+    randomTextElement.textContent = getRandomText();
+    const randomTextElement2 = document.getElementById('randomText2');
+    randomTextElement2.textContent = getRandomText2();
+  </script>
+</body>
+</html>

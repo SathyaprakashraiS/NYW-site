@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fireworks Celebration</title>
+  <title>HAPPY NEWYEAR</title>
   <style>
   body {
-  	background: #0000FF ;
+  	background: #000000;
 	/*
 	background: black url(https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7806106/full-moon-clipart-md.png) no-repeat;
 	background-position: 20vw 25vh;
 	background-size: 140px auto;
 	overflow: hidden;
 	*/
+}
+h1
+{
+	color: #FFFFFF;
 }
 
 a {
@@ -78,6 +82,8 @@ canvas {
 <h1>
 	SATHYA
 </h1>
+<a href="testpanrenda.html"><p>button</p></a>
+<img src="1.jpg" class="d-block w-75" alt="OOPS ERROR">
 
 <canvas id="fireworkCanvas"></canvas>
   <script>
@@ -93,7 +99,7 @@ class Particle {
     this.x = x;
     this.y = y;
     this.color = color;
-    this.radius = Math.random() * 2.5 + 1;
+    this.radius = Math.random() * 5 + 1;
 		this.velocity = {
       x: Math.random() * 1.4 - 1.4/2,
       y: Math.random() * 1.4 - 1.4/2

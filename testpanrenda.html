@@ -24,8 +24,10 @@ canvas {
   width: 90%; /* Adjust the width of the centered div */
   padding: 10px;
   text-align: center;
-  background-color: #00FF00;
+  /*background-color: #000000;*/
   font-size: 2em;
+  -webkit-user-select: none;
+       user-select: none;
 }
 @media (max-width: 1199.98px)
   {
@@ -35,8 +37,10 @@ canvas {
         width: 90%; /* Adjust the width of the centered div */
         padding: 10px;
         text-align: center;
-        background-color: #0000FF;
+        /*background-color: #000000;*/
         font-size: 70%;
+        -webkit-user-select: none;
+       user-select: none;
       }
       .line1 {
        /*position: absolute;
@@ -90,7 +94,16 @@ h1 {
  user-select: none;
 }
 */
-h2 {
+h1 {
+  color: #f4f6f7;
+  font-family: 'Brush Script MT', cursive;
+}
+p {
+  color: #f4f6f7;
+  font-size: 80%;
+  font-family: 'Brush Script MT', cursive;
+}
+/*h2 {
  position: absolute;
  top: 60%;
  left: 50%;
@@ -114,7 +127,7 @@ h3
  font-weight: 500;
  -webkit-user-select: none;
  user-select: none;
-}
+}*/
 .line1 {
  /*position: absolute;
  top: 60%;
@@ -126,6 +139,9 @@ h3
  font-weight: 500;
  -webkit-user-select: none;
  user-select: none;
+}
+.msg {
+  color: black;
 }
 .line2
 {
@@ -144,6 +160,20 @@ h3
       font-size: 2em;
       color: #333;
     }
+    .message-box {
+      position: absolute;
+      bottom: 20px; /* Adjust the distance from the bottom */
+      right: 20px; /* Adjust the distance from the right */
+      max-width: 60%;
+      width: auto;
+      min-width: 100px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -151,8 +181,12 @@ h3
   <div class="main">
   <h1>HAPPY NEW YEAR 2024 !</h1>
   <p id="randomText">sad</p>
-  <p id="randomText2">asd</p>
-</div>
+  <!-- <p id="randomText2">asd</p> -->
+  </div>
+  <div class="message-box" id="potti">
+    <!-- <h3>Message Box</h3> -->
+    <p class="msg">asd</p>
+  </div>
   <!--<h2>Let this year be the year you go after progress over perfection and</h2>
   <h3>savor every victory you make along the way to your goals</h3>-->
   <!--
@@ -161,6 +195,20 @@ h3
   -->
 <canvas id="newyearwishes"></canvas>
   <script>
+    function toggleMessageBoxRandomly() {
+      var messageBox = document.getElementById('potti');
+      var randomNumber = Math.random(); // Generate a random number between 0 and 1
+
+      // Show the message box with a 30% probability (adjust probability as needed)
+      if (randomNumber < 0.3) {
+        messageBox.style.display = 'block';
+      } else {
+        messageBox.style.display = "none";
+      }
+    }
+
+    // Call the function initially or on some event (e.g., page load, button click, etc.)
+    toggleMessageBoxRandomly();
     // helper functions
 const PI2 = Math.PI * 2;
 const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
@@ -323,20 +371,25 @@ document.ontouchstart = (evt) => newyearwishes.onClick(evt);
 
 // Array of random texts
     const texts = [
-      "Let this year be the year you go after progress over perfection and",
-      "Welcome to the magic of coding!",
-      "Programming is fun!",
-      "Keep learning and growing!",
-      "The journey of a thousand miles begins with a single step."
+      "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
+      "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
+      "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
+      "As we step into this New Year, may it be filled with a symphony of laughter, a canvas of love, and a palette of dreams coming true! Here's to a spectacular and adventurous journey ahead.",
+      "May the coming year bless you with moments of laughter, warmth of love, and the joy of fulfillment. Embrace each day with a heart full of gratitude and a spirit of optimism.",
+      "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead. ",
+      "Here's to a year filled with new possibilities, exciting experiences, and moments that leave you speechless. May your New Year be sprinkled with joy, success, and endless blessings.",
+      "As the New Year unfolds, may it bring along countless reasons to smile, endless moments of delight, and opportunities that lead you to great heights. Wishing you a fantastic year ahead.",
+      "May the New Year be a blank book waiting for your adventures, filled with pages of love, accomplishments, and cherished memories. Wishing you a year that's nothing short of amazing. ",
+      "Cheers to the New Year! May it be a journey full of surprises, adventures, and beautiful moments shared with the ones you hold dear. Wishing you happiness and success. ",
       // Add more text strings as needed
     ];
 
     const texts2 = [
-      "savor every victory you make along the way to your goals :)",
-      "Welcome to the magic of coding!",
-      "Programming is fun!",
-      "Keep learning and growing!",
-      "The journey of a thousand miles begins with a single step."
+      "savor every victory you make along the way to your goals :) asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+      "Welcome to the magic of coding! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+      "Programming is fun! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+      "Keep learning and growing! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+      "The journey of a thousand miles begins with a single step. asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we"
       // Add more text strings as needed
     ];
 

@@ -2,36 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Centered Div</title>
+  <title>Randomly Visible Message Box</title>
   <style>
+    /* Styles for body and message box remain the same as previously shown */
     body {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       background-color: #f0f0f0;
+      position: relative;
     }
 
-    .centered-div {
-      width: 80%; /* Adjust the width of the centered div */
-      max-width: 400px; /* Example maximum width */
-      padding: 20px;
+    .message-box {
+      /* Styles for the message box remain the same as previously shown */
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 200px;
+      padding: 10px;
       background-color: #fff;
-      border-radius: 10px;
+      border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      display: none; /* Initially hidden */
     }
   </style>
 </head>
 <body>
-  <div class="centered-div">
-    <h1>Centered Div Example</h1>
-    <p>This div is centered on the screen.</p>
+  <div class="message-box" id="messageBox">
+    <h3>Message Box</h3>
+    <p>This message box is displayed randomly.</p>
   </div>
+
+  <script>
+    // Function to toggle the visibility of the message box randomly
+    function toggleMessageBoxRandomly() {
+      var messageBox = document.getElementById('messageBox');
+      var randomNumber = Math.random(); // Generate a random number between 0 and 1
+
+      // Show the message box with a 30% probability (adjust probability as needed)
+      if (randomNumber < 0.3) {
+        messageBox.style.display = 'block';
+      } else {
+        messageBox.style.display = 'none';
+      }
+    }
+
+    // Call the function initially or on some event (e.g., page load, button click, etc.)
+    toggleMessageBoxRandomly();
+  </script>
 </body>
 </html>
+
+
 
 
 <!--

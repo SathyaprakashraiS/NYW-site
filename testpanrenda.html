@@ -13,7 +13,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #020202;
+    /*background: #020202;*/
+    /*background-color: #f0f0f0;*/
+    background-image: url('./porul/15.jpg'); /* Replace with your image URL */
+    background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Keep the background fixed while scrolling */
+      height: 100vh;
   }
 .main
 {
@@ -29,6 +36,22 @@
 }
 @media (max-width: 1199.98px)
   {
+    body
+  {
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: #020202;*/
+    /*background-color: #f0f0f0;*/
+    background-image: url('./porul/13.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+  }
     .main
       {
         position: absolute;
@@ -188,7 +211,7 @@ p{
   <p>test panren da deisd asd asd asd asd areqwe fwefw ewh qehwf kqhwev rkewqhjb kreqwjhb rkwqejhb rkeqwjhb krweqhbk rhweqb khrewvq krjhwqevk rjhvweqk rqewjk rgkqweh rgqewhg rkjweqhg rkqwehg rjqhewvkrjhewvkjrhvwekh rweq jhrvewqkjh rkewqjh rwqejh rkwqejhk rewqjhb krjqwehb rhweqb kjrhbewk jhrbqewkj rbkjwe brqewhb rkjwqeb rjwehb krjheqwb jkrbqewk rjhbqewkj rhwqke bkwqejr </p> -->
   <div class="container">
     <div class="image-box">
-      <img src="./porul/3.JPG" alt="Image Description">
+      <img src="./porul/4.png" alt="Image Description">
       <div class="image-description">
         <h2>Title for the Image</h2>
       </div>
@@ -197,6 +220,7 @@ p{
   <p style="color: #FFFFFF;">Description describing the image goes here. This paragraph can contain information about the image or anything related.</p>
 </div>
 <canvas id="fireworkCanvas"></canvas>
+<!-- <canvas id="newyearwishes"></canvas> -->
 
 <script>
   	const particleCount = 200;
@@ -267,6 +291,8 @@ function createRandomFirework() {
 	createFirework(Math.random()*window.innerWidth, Math.random()*window.innerHeight);
 }
 
+
+
 animate();
 
 setInterval(function() {
@@ -274,6 +300,12 @@ setInterval(function() {
 		createRandomFirework();
 	}
 , 2000-window.innerWidth);
+
+
+
+
+
+
   </script>
 </body>
 </html>

@@ -3,116 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAPPY NEW YEAR 2024</title>
+  <title>HAPPY NEW YEAR 2025</title>
   <style>
-  body
-  {
-    margin: 0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*background: #020202;*/
-    /*background-color: #f0f0f0;*/
-    background-image: url('./porul/1.jpg'); /* Replace with your image URL */
-    background-size: cover;
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('./porul/1.jpg'); /* Existing image */
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* Keep the background fixed while scrolling */
-      height: 100vh;  }
-canvas {
- display: block;
-}
-.main
-{
-  position: absolute;
-  width: 90%; /* Adjust the width of the centered div */
-  padding: 10px;
-  text-align: center;
-  /*background-color: #000000;*/
-  font-size: 2em;
-  -webkit-user-select: none;
-       user-select: none;
-}
-@media (max-width: 1199.98px)
-  {
-    .main
-      {
-        position: absolute;
-        width: 90%; /* Adjust the width of the centered div */
-        padding: 10px;
-        text-align: center;
-        /*background-color: #000000;*/
-        font-size: 70%;
-        -webkit-user-select: none;
-       user-select: none;
-      }
-      .line1 {
-       /*position: absolute;
-       top: 60%;
-       left: 50%;*/
-       transform: translate(-50%, -50%);
-       color: #f4f6f7;
-       font-family: 'Brush Script MT', cursive;
-       font-size: 150%;
-       font-weight: 500;
-       -webkit-user-select: none;
-       user-select: none;
-      }
-      .line2
-      {
-       /*position: absolute;
-       top: 65%;
-       left: 50%;*/
-       transform: translate(-50%, -50%);
-       color: #f4f6f7;
-       font-family: 'Brush Script MT', cursive;
-       font-size: 150%;
-       font-weight: 500;
-       -webkit-user-select: none;
-       user-select: none;
-      }
-  }
-h1 {
-  color: #f4f6f7;
-  font-family: 'Brush Script MT', cursive;
-}
-p {
-  color: #f4f6f7;
-  font-size: 80%;
-  font-family: 'Brush Script MT', cursive;
-}
-.line1 {
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 150%;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-.msg {
-  color: black;
-}
-.line2
-{
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 150%;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-.random-text {
-      font-size: 2em;
-      color: #333;
+      background-attachment: fixed;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Brush Script MT', cursive;
     }
-.message-box {
+
+    canvas {
+      display: block;
+    }
+
+    .main {
       position: absolute;
-      bottom: 20px; /* Adjust the distance from the bottom */
-      right: 20px; /* Adjust the distance from the right */
+      width: 90%;
+      padding: 10px;
+      text-align: center;
+      font-size: 2em;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    h1 {
+      color: #f4f6f7;
+    }
+
+    p {
+      color: #f4f6f7;
+      font-size: 80%;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .line1, .line2 {
+      transform: translate(-50%, -50%);
+      color: #f4f6f7;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 150%;
+      font-weight: 500;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .message-box {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       max-width: 60%;
       width: auto;
       min-width: 100px;
@@ -122,294 +68,210 @@ p {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       display: none;
-}
-/* --- Glow effect for heading --- */
-.main h1 {
-  text-shadow: 
-    0 0 5px #FFFFFF;
-}
-/* --- Sparkles around heading --- */
-.sparkle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: white;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.8;
-  box-shadow: 0 0 4px white, 0 0 8px white;
-}
+    }
+
+    /* --- Glowing header --- */
+    .main h1 {
+      font-size: 4em;
+      text-align: center;
+      color: #fff;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff7f50,
+        0 0 20px #ff7f50,
+        0 0 40px #ff4500,
+        0 0 80px #ff4500;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff,0 0 10px #ff7f50,0 0 20px #ff7f50,0 0 40px #ff4500,0 0 80px #ff4500; }
+      to { text-shadow: 0 0 10px #fff,0 0 20px #ff7f50,0 0 30px #ff7f50,0 0 60px #ff4500,0 0 120px #ff4500; }
+    }
+
+    /* --- Sparkling random text --- */
+    #randomText {
+      font-size: 1.5em;
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #ffb6c1, 0 0 20px #ffb6c1;
+      margin-top: 20px;
+      animation: sparkle 3s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #ffb6c1, 0 0 20px #ffb6c1; }
+      50% { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 40px #ff1493; }
+    }
+
+    /* --- Confetti --- */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 8px;
+      height: 8px;
+      opacity: 0.8;
+      border-radius: 50%;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
   </style>
 </head>
 <body>
   <div class="main">
-  <h1>HAPPY NEW YEAR 2024 !</h1>
-  <p id="randomText"></p>
+    <h1>HAPPY NEW YEAR 2025 !</h1>
+    <p id="randomText"></p>
   </div>
+
   <div class="message-box" id="potti">
-    <p class="msg">cringe ah thaan erukku ennake theriyuthu but veetla summa erukome nu senjathu prand ithu 😀</p>
+    <p class="msg">cringe ah thaan erukku but veetla summa erukome nu senjathu prand ithu 😀</p>
   </div>
-<canvas id="newyearwishes"></canvas>
+
+  <canvas id="newyearwishes"></canvas>
+
   <script>
+    // --- Random message box ---
     function toggleMessageBoxRandomly() {
       var messageBox = document.getElementById('potti');
-      var randomNumber = Math.random(); // Generate a random number between 0 and 1
-
-      // Show the message box with a 30% probability (adjust probability as needed)
-      if (randomNumber < 0.3) {
+      var randomNumber = Math.random();
+      if (randomNumber < 0.2) {
         messageBox.style.display = 'block';
       } else {
         messageBox.style.display = "none";
       }
     }
-
     toggleMessageBoxRandomly();
 
-const PI2 = Math.PI * 2;
-const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
-const timestamp = (_) => new Date().getTime();
+    // --- Fireworks code (existing) ---
+    const PI2 = Math.PI * 2;
+    const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
+    const timestamp = (_) => new Date().getTime();
 
-class Newyearwishes {
- constructor() {
-  this.resize();
-  this.fireworks = [];
-  this.counter = 0;
- }
-
- resize() {
-  this.width = canvas.width = window.innerWidth;
-  let center = (this.width / 2) | 0;
-  this.spawnA = (center - center / 4) | 0;
-  this.spawnB = (center + center / 4) | 0;
-
-  this.height = canvas.height = window.innerHeight;
-  this.spawnC = this.height * 0.1;
-  this.spawnD = this.height * 0.5;
- }
-
- onClick(evt) {
-  let x = evt.clientX || (evt.touches && evt.touches[0].pageX);
-  let y = evt.clientY || (evt.touches && evt.touches[0].pageY);
-
-  let count = random(3, 5);
-  for (let i = 0; i < count; i++)
-   this.fireworks.push(
-    new Firework(
-     random(this.spawnA, this.spawnB),
-     this.height,
-     x,
-     y,
-     random(0, 260),
-     random(30, 110)
-    )
-   );
-
-  this.counter = -1;
- }
-
- update(delta) {
-  ctx.globalCompositeOperation = "hard-light";
-  ctx.fillStyle = `rgba(20,20,20,${7 * delta})`;
-  ctx.fillRect(0, 0, this.width, this.height);
-
-  ctx.globalCompositeOperation = "lighter";
-  for (let firework of this.fireworks) firework.update(delta);
-
-  this.counter += delta * 3; // each second
-  if (this.counter >= 1) {
-   this.fireworks.push(
-    new Firework(
-     random(this.spawnA, this.spawnB),
-     this.height,
-     random(0, this.width),
-     random(this.spawnC, this.spawnD),
-     random(0, 360),
-     random(30, 110)
-    )
-   );
-   this.counter = 0;
-  }
-
-  if (this.fireworks.length > 1000)
-   this.fireworks = this.fireworks.filter((firework) => !firework.dead);
- }
-}
-
-class Firework {
- constructor(x, y, targetX, targetY, shade, offsprings) {
-  this.dead = false;
-  this.offsprings = offsprings;
-
-  this.x = x;
-  this.y = y;
-  this.targetX = targetX;
-  this.targetY = targetY;
-
-  this.shade = shade;
-  this.history = [];
- }
- update(delta) {
-  if (this.dead) return;
-
-  let xDiff = this.targetX - this.x;
-  let yDiff = this.targetY - this.y;
-  if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) {
-   this.x += xDiff * 2 * delta;
-   this.y += yDiff * 2 * delta;
-
-   this.history.push({ x: this.x, y: this.y });
-
-   if (this.history.length > 20) this.history.shift();
-  } else {
-   if (this.offsprings && !this.madeChilds) {
-    let babies = this.offsprings / 2;
-    for (let i = 0; i < babies; i++) {
-     let targetX = (this.x + this.offsprings * Math.cos((PI2 * i) / babies)) | 0;
-     let targetY = (this.y + this.offsprings * Math.sin((PI2 * i) / babies)) | 0;
-
-     newyearwishes.fireworks.push(
-      new Firework(this.x, this.y, targetX, targetY, this.shade, 0)
-     );
+    class Newyearwishes {
+      constructor() { this.resize(); this.fireworks = []; this.counter = 0; }
+      resize() {
+        this.width = canvas.width = window.innerWidth;
+        let center = (this.width / 2) | 0;
+        this.spawnA = (center - center / 4) | 0;
+        this.spawnB = (center + center / 4) | 0;
+        this.height = canvas.height = window.innerHeight;
+        this.spawnC = this.height * 0.1;
+        this.spawnD = this.height * 0.5;
+      }
+      onClick(evt) {
+        let x = evt.clientX || (evt.touches && evt.touches[0].pageX);
+        let y = evt.clientY || (evt.touches && evt.touches[0].pageY);
+        let count = random(3, 5);
+        for (let i = 0; i < count; i++)
+          this.fireworks.push(new Firework(random(this.spawnA,this.spawnB), this.height, x, y, random(0,260), random(30,110)));
+        this.counter = -1;
+      }
+      update(delta) {
+        ctx.globalCompositeOperation = "hard-light";
+        ctx.fillStyle = `rgba(20,20,20,${7*delta})`;
+        ctx.fillRect(0,0,this.width,this.height);
+        ctx.globalCompositeOperation = "lighter";
+        for (let firework of this.fireworks) firework.update(delta);
+        this.counter += delta * 3;
+        if(this.counter >= 1){
+          this.fireworks.push(new Firework(random(this.spawnA,this.spawnB), this.height, random(0,this.width), random(this.spawnC,this.spawnD), random(0,360), random(30,110)));
+          this.counter=0;
+        }
+        if(this.fireworks.length>1000) this.fireworks = this.fireworks.filter(fw => !fw.dead);
+      }
     }
-   }
-   this.madeChilds = true;
-   this.history.shift();
-  }
 
-  if (this.history.length === 0) this.dead = true;
-  else if (this.offsprings) {
-   for (let i = 0; this.history.length > i; i++) {
-    let point = this.history[i];
-    ctx.beginPath();
-    ctx.fillStyle = "hsl(" + this.shade + ",100%," + i + "%)";
-    ctx.arc(point.x, point.y, 1, 0, PI2, false);
-    ctx.fill();
-   }
-  } else {
-   ctx.beginPath();
-   ctx.fillStyle = "hsl(" + this.shade + ",100%,50%)";
-   ctx.arc(this.x, this.y, 1, 0, PI2, false);
-   ctx.fill();
-  }
- }
-}
+    class Firework {
+      constructor(x,y,targetX,targetY,shade,offsprings){
+        this.dead=false;
+        this.offsprings=offsprings;
+        this.x=x; this.y=y; this.targetX=targetX; this.targetY=targetY;
+        this.shade=shade; this.history=[];
+      }
+      update(delta){
+        if(this.dead) return;
+        let xDiff = this.targetX - this.x;
+        let yDiff = this.targetY - this.y;
+        if(Math.abs(xDiff)>3||Math.abs(yDiff)>3){
+          this.x += xDiff*2*delta;
+          this.y += yDiff*2*delta;
+          this.history.push({x:this.x, y:this.y});
+          if(this.history.length>20) this.history.shift();
+        } else {
+          if(this.offsprings && !this.madeChilds){
+            let babies = this.offsprings/2;
+            for(let i=0;i<babies;i++){
+              let targetX = (this.x + this.offsprings * Math.cos((PI2*i)/babies))|0;
+              let targetY = (this.y + this.offsprings * Math.sin((PI2*i)/babies))|0;
+              newyearwishes.fireworks.push(new Firework(this.x,this.y,targetX,targetY,this.shade,0));
+            }
+          }
+          this.madeChilds=true;
+          this.history.shift();
+        }
+        if(this.history.length===0) this.dead=true;
+        else if(this.offsprings){
+          for(let i=0;i<this.history.length;i++){
+            let point=this.history[i];
+            ctx.beginPath();
+            ctx.fillStyle = "hsl("+this.shade+",100%,"+i+"%)";
+            ctx.arc(point.x,point.y,1,0,PI2,false);
+            ctx.fill();
+          }
+        } else {
+          ctx.beginPath();
+          ctx.fillStyle="hsl("+this.shade+",100%,50%)";
+          ctx.arc(this.x,this.y,1,0,PI2,false);
+          ctx.fill();
+        }
+      }
+    }
 
-let canvas = document.getElementById("newyearwishes");
-let ctx = canvas.getContext("2d");
+    let canvas = document.getElementById("newyearwishes");
+    let ctx = canvas.getContext("2d");
+    let then = timestamp();
+    let newyearwishes = new Newyearwishes();
+    window.onresize = () => newyearwishes.resize();
+    document.onclick = (evt)=>newyearwishes.onClick(evt);
+    document.ontouchstart = (evt)=>newyearwishes.onClick(evt);
+    (function loop(){
+      requestAnimationFrame(loop);
+      let now = timestamp();
+      let delta = now-then;
+      then=now;
+      newyearwishes.update(delta/1000);
+    })();
 
-let then = timestamp();
+    // --- Random texts ---
+    const texts = [
+      "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
+      "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
+      "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
+      "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead.",
+      "May the New Year bring you abundant happiness and prosperity. Here's to embracing the unknown with courage and welcoming opportunities with open arms. Wishing you a fantastic year ahead.",
+      "May this year turn your dreams into plans, your plans into reality, and every moment into a memory worth keeping.",
+      "Wishing you a New Year full of small joys that make your days brighter and big wins that make your heart proud.",
+      "As the year turns, may your spirit soar higher than your worries, and your joys shine brighter than your fears.",
+      "Let this year be a garden of dreams, where hope blooms and happiness grows wild.",
+      "Wishing you a year as limitless as the sky and as warm as the sun on a perfect day."
+    ];
 
-let newyearwishes = new Newyearwishes();
-window.onresize = () => newyearwishes.resize();
-document.onclick = (evt) => newyearwishes.onClick(evt);
-document.ontouchstart = (evt) => newyearwishes.onClick(evt);
-(function loop() {
- requestAnimationFrame(loop);
+    const randomTextElement = document.getElementById('randomText');
+    randomTextElement.textContent = texts[Math.floor(Math.random()*texts.length)];
 
- let now = timestamp();
- let delta = now - then;
-
- then = now;
- newyearwishes.update(delta / 1000);
-})();
-
-const texts = [
-  "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
-  "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
-  "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
-  "As we step into this New Year, may it be filled with a symphony of laughter, a canvas of love, and a palette of dreams coming true! Here's to a spectacular and adventurous journey ahead.",
-  "May the coming year bless you with moments of laughter, warmth of love, and the joy of fulfillment. Embrace each day with a heart full of gratitude and a spirit of optimism.",
-  "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead. ",
-  "Here's to a year filled with new possibilities, exciting experiences, and moments that leave you speechless. May your New Year be sprinkled with joy, success, and endless blessings.",
-  "As the New Year unfolds, may it bring along countless reasons to smile, endless moments of delight, and opportunities that lead you to great heights. Wishing you a fantastic year ahead.",
-  "May the New Year be a blank book waiting for your adventures, filled with pages of love, accomplishments, and cherished memories. Wishing you a year that's nothing short of amazing. ",
-  "Cheers to the New Year! May it be a journey full of surprises, adventures, and beautiful moments shared with the ones you hold dear. Wishing you happiness and success.",
-  "May the coming year be a blank canvas awaiting your unique strokes of success, love, and fulfillment. Sending warm wishes your way for a prosperous and joyous New Year. ",
-  "Cheers to a New Year filled with endless possibilities, new friendships, and moments that inspire. Wishing you a year brimming with peace, love, and beautiful surprises. ",
-  "May the New Year bring you abundant happiness and prosperity. Here's to embracing the unknown with courage and welcoming opportunities with open arms. Wishing you a fantastic year ahead.",
-  "Here's to a year brimming with moments that inspire, challenges that strengthen, and opportunities that lead to success. Wishing you a fantastic New Year filled with endless possibilities.",
-  "As the clock strikes midnight, may it herald a year of triumphs, opportunities, and the courage to pursue your passions. Wishing you a New Year brimming with determination and happiness. ",
-  "As the New Year unfolds, may it shower you with moments of serenity, success, and the determination to reach new heights. Here's to a year filled with wonderful opportunities.",
-  "Here's to a brand-new chapter waiting to be written. May the New Year bring you happiness, success, and the chance to script your own story. ",
-];
-
-const texts2 = [
-  "savor every victory you make along the way to your goals :) asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-  "Welcome to the magic of coding! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-  "Programming is fun! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-  "Keep learning and growing! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
-  "The journey of a thousand miles begins with a single step. asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we"
-];
-
-var globalvalue=0;
-
-function getRandomText() {
-  const randomIndex = Math.floor(Math.random() * texts.length);
-  globalvalue=randomIndex
-  return texts[randomIndex];
-}
-
-function getRandomText2() {
-  return texts2[globalvalue];
-}
-
-const randomTextElement = document.getElementById('randomText');
-randomTextElement.textContent = getRandomText();
-
-const randomTextElement2 = document.getElementById('randomText2');
-randomTextElement2.textContent = getRandomText2();
-
-// --- Sparkles JS ---
-const mainText = document.querySelector('.main');
-const sparkleCount = 15; // number of sparkles
-
-for (let i = 0; i < sparkleCount; i++) {
-  const sparkle = document.createElement('div');
-  sparkle.className = 'sparkle';
-  mainText.appendChild(sparkle);
-
-  // Add custom data for upward movement and drift
-  sparkle.dataset.top = Math.random() * 100;      // vertical position in %
-  sparkle.dataset.left = Math.random() * 100;     // horizontal position in %
-  sparkle.dataset.speed = 0.05 + Math.random() * 0.15; // upward speed
-  sparkle.dataset.drift = (Math.random() - 0.5) * 0.05; // sideways drift
-  sparkle.style.opacity = Math.random() * 0.5 + 0.3;
-
-  sparkle.style.top = sparkle.dataset.top + '%';
-  sparkle.style.left = sparkle.dataset.left + '%';
-  sparkle.style.transform = `scale(${0.5 + Math.random()})`;
-}
-
-// Animate fireflies
-function animateFireflies() {
-  const sparkles = document.querySelectorAll('.sparkle');
-  sparkles.forEach(s => {
-    // Update positions
-    let top = parseFloat(s.dataset.top);
-    let left = parseFloat(s.dataset.left);
-
-    top -= parseFloat(s.dataset.speed); // float upward
-    if (top < -2) top = 100;            // reset to bottom
-
-    left += parseFloat(s.dataset.drift); // sideways drift
-    if (left < -2) left = 100;
-    if (left > 102) left = 0;
-
-    s.dataset.top = top;
-    s.dataset.left = left;
-
-    s.style.top = top + '%';
-    s.style.left = left + '%';
-
-    // Gentle flicker
-    s.style.opacity = 0.4 + 0.4 * Math.sin(Date.now() / 500 + Math.random());
-  });
-
-  requestAnimationFrame(animateFireflies);
-}
-
-animateFireflies();
+    // --- Confetti generator ---
+    const confettiCount = 50;
+    for(let i=0;i<confettiCount;i++){
+      const confetti = document.createElement('div');
+      confetti.className='confetti';
+      confetti.style.left=Math.random()*window.innerWidth+'px';
+      confetti.style.backgroundColor=`hsl(${Math.random()*360},100%,70%)`;
+      confetti.style.animationDuration=(Math.random()*3+2)+'s';
+      confetti.style.width=confetti.style.height=(Math.random()*8+4)+'px';
+      document.body.appendChild(confetti);
+    }
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAPPY NEW YEAR 2025</title>
+  <title>HAPPY NEW YEAR 2024</title>
   <style>
   body
   {
@@ -74,32 +74,6 @@ canvas {
        user-select: none;
       }
   }
-/*
-.main
-{
-  position: absolute;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00FF00;
-}*/
-/*
-h1 {
- position: absolute;
- top: 30%;
- left: auto;
- color: #f4f5f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 500%;
- font-weight: 800;
- -webkit-user-select: none;
- user-select: none;
-}
-*/
 h1 {
   color: #f4f6f7;
   font-family: 'Brush Script MT', cursive;
@@ -109,35 +83,7 @@ p {
   font-size: 80%;
   font-family: 'Brush Script MT', cursive;
 }
-/*h2 {
- position: absolute;
- top: 60%;
- left: 50%;
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 1.5em;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}
-h3
-{
- position: absolute;
- top: 65%;
- left: 50%;
- transform: translate(-50%, -50%);
- color: #f4f6f7;
- font-family: 'Brush Script MT', cursive;
- font-size: 1.5em;
- font-weight: 500;
- -webkit-user-select: none;
- user-select: none;
-}*/
 .line1 {
- /*position: absolute;
- top: 60%;
- left: 50%;*/
  transform: translate(-50%, -50%);
  color: #f4f6f7;
  font-family: 'Brush Script MT', cursive;
@@ -151,9 +97,6 @@ h3
 }
 .line2
 {
- /*position: absolute;
- top: 65%;
- left: 50%;*/
  transform: translate(-50%, -50%);
  color: #f4f6f7;
  font-family: 'Brush Script MT', cursive;
@@ -166,7 +109,7 @@ h3
       font-size: 2em;
       color: #333;
     }
-    .message-box {
+.message-box {
       position: absolute;
       bottom: 20px; /* Adjust the distance from the bottom */
       right: 20px; /* Adjust the distance from the right */
@@ -179,26 +122,34 @@ h3
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       display: none;
-    }
+}
+/* --- Glow effect for heading --- */
+.main h1 {
+  text-shadow: 
+    0 0 5px #FFFFFF;
+}
+/* --- Sparkles around heading --- */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.8;
+  box-shadow: 0 0 4px white, 0 0 8px white;
+}
   </style>
 </head>
 <body>
-  <!--<h1>Happy New Year 2025</h1>-->
   <div class="main">
-  <h1>HAPPY NEW YEAR 2025 !</h1>
+  <h1>HAPPY NEW YEAR 2024 !</h1>
   <p id="randomText"></p>
-  <!-- <p id="randomText2">asd</p> -->
   </div>
   <div class="message-box" id="potti">
-    <!-- <h3>Message Box</h3> -->
-    <p class="msg">cringe ah thaan erukku but veetla summa erukome nu senjathu prand ithu 😀</p>
+    <p class="msg">cringe ah thaan erukku ennake theriyuthu but veetla summa erukome nu senjathu prand ithu 😀</p>
   </div>
-  <!--<h2>Let this year be the year you go after progress over perfection and</h2>
-  <h3>savor every victory you make along the way to your goals</h3>-->
-  <!--
-  <div class="line1" id="randomText"></div>
-  <div class="line2" id="randomText2"></div>
-  -->
 <canvas id="newyearwishes"></canvas>
   <script>
     function toggleMessageBoxRandomly() {
@@ -206,26 +157,22 @@ h3
       var randomNumber = Math.random(); // Generate a random number between 0 and 1
 
       // Show the message box with a 30% probability (adjust probability as needed)
-      if (randomNumber < 0.2) {
+      if (randomNumber < 0.3) {
         messageBox.style.display = 'block';
       } else {
         messageBox.style.display = "none";
       }
     }
 
-    // Call the function initially or on some event (e.g., page load, button click, etc.)
     toggleMessageBoxRandomly();
-    // helper functions
+
 const PI2 = Math.PI * 2;
 const random = (min, max) => (Math.random() * (max - min + 1) + min) | 0;
 const timestamp = (_) => new Date().getTime();
 
-// container
 class Newyearwishes {
  constructor() {
   this.resize();
-
-  // create a lovely place to store the firework
   this.fireworks = [];
   this.counter = 0;
  }
@@ -269,7 +216,6 @@ class Newyearwishes {
   ctx.globalCompositeOperation = "lighter";
   for (let firework of this.fireworks) firework.update(delta);
 
-  // if enough time passed... create new new firework
   this.counter += delta * 3; // each second
   if (this.counter >= 1) {
    this.fireworks.push(
@@ -285,7 +231,6 @@ class Newyearwishes {
    this.counter = 0;
   }
 
-  // remove the dead fireworks
   if (this.fireworks.length > 1000)
    this.fireworks = this.fireworks.filter((firework) => !firework.dead);
  }
@@ -310,24 +255,18 @@ class Firework {
   let xDiff = this.targetX - this.x;
   let yDiff = this.targetY - this.y;
   if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) {
-   // is still moving
    this.x += xDiff * 2 * delta;
    this.y += yDiff * 2 * delta;
 
-   this.history.push({
-    x: this.x,
-    y: this.y
-   });
+   this.history.push({ x: this.x, y: this.y });
 
    if (this.history.length > 20) this.history.shift();
   } else {
    if (this.offsprings && !this.madeChilds) {
     let babies = this.offsprings / 2;
     for (let i = 0; i < babies; i++) {
-     let targetX =
-      (this.x + this.offsprings * Math.cos((PI2 * i) / babies)) | 0;
-     let targetY =
-      (this.y + this.offsprings * Math.sin((PI2 * i) / babies)) | 0;
+     let targetX = (this.x + this.offsprings * Math.cos((PI2 * i) / babies)) | 0;
+     let targetY = (this.y + this.offsprings * Math.sin((PI2 * i) / babies)) | 0;
 
      newyearwishes.fireworks.push(
       new Firework(this.x, this.y, targetX, targetY, this.shade, 0)
@@ -375,45 +314,102 @@ document.ontouchstart = (evt) => newyearwishes.onClick(evt);
  newyearwishes.update(delta / 1000);
 })();
 
-// Array of random texts
-    const texts = [
-      "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
-      "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
-      "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
-      "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead. ",
-      "May the New Year bring you abundant happiness and prosperity. Here's to embracing the unknown with courage and welcoming opportunities with open arms. Wishing you a fantastic year ahead.",
-      "May this year turn your dreams into plans, your plans into reality, and every moment into a memory worth keeping.",
-      "Wishing you a New Year full of small joys that make your days brighter and big wins that make your heart proud.",
-      "As the year turns, may your spirit soar higher than your worries, and your joys shine brighter than your fears.",
-      "Let this year be a garden of dreams, where hope blooms and happiness grows wild.",
-      "Wishing you a year as limitless as the sky and as warm as the sun on a perfect day.",
-      "May the winds of this New Year carry you toward unexpected joys and beautiful moments.",
-      "Here’s to a year where every sunrise feels like a fresh start and every sunset leaves you grateful.",
-      "May your ambition be fierce, your heart be kind, and your year be unforgettable.",
-      "Wishing you a year of balance—hard work, laughter, rest, and moments that matter most.",
-      "As the calendar flips, may your heart stay full, your mind stay sharp, and your life overflow with moments that matter.",
-      "Wishing you a year full of bold moves, new opportunities, and unstoppable energy.",
-      "Wishing you 12 months of success, 52 weeks of laughter, 365 days of fun, and countless moments of joy.",
-      "Wishing you a year of bold decisions, fearless pursuits, and dreams turned into reality.",
-      "Step into the year with a heart full of hope, a mind full of vision, and the courage to make it extraordinary."
-      // Add more text strings as needed
-    ];
+const texts = [
+  "May your New Year sparkle with moments of love, laughter, and endless joy! Here's to new beginnings, wonderful adventures, and the fulfillment of your dreams.",
+  "As the New Year dawns, may it bring forth boundless opportunities, exciting adventures, and a tapestry of beautiful moments. Wishing you a year filled with happiness, success, and prosperity!",
+  "Cheers to a New Year filled with fresh possibilities and new opportunities! May your path be illuminated with love, peace, and prosperity.",
+  "As we step into this New Year, may it be filled with a symphony of laughter, a canvas of love, and a palette of dreams coming true! Here's to a spectacular and adventurous journey ahead.",
+  "May the coming year bless you with moments of laughter, warmth of love, and the joy of fulfillment. Embrace each day with a heart full of gratitude and a spirit of optimism.",
+  "May the New Year be a chapter of discoveries and adventures, a canvas of love and joy, and a pathway to peace and prosperity. Wishing you a wonderful year ahead. ",
+  "Here's to a year filled with new possibilities, exciting experiences, and moments that leave you speechless. May your New Year be sprinkled with joy, success, and endless blessings.",
+  "As the New Year unfolds, may it bring along countless reasons to smile, endless moments of delight, and opportunities that lead you to great heights. Wishing you a fantastic year ahead.",
+  "May the New Year be a blank book waiting for your adventures, filled with pages of love, accomplishments, and cherished memories. Wishing you a year that's nothing short of amazing. ",
+  "Cheers to the New Year! May it be a journey full of surprises, adventures, and beautiful moments shared with the ones you hold dear. Wishing you happiness and success.",
+  "May the coming year be a blank canvas awaiting your unique strokes of success, love, and fulfillment. Sending warm wishes your way for a prosperous and joyous New Year. ",
+  "Cheers to a New Year filled with endless possibilities, new friendships, and moments that inspire. Wishing you a year brimming with peace, love, and beautiful surprises. ",
+  "May the New Year bring you abundant happiness and prosperity. Here's to embracing the unknown with courage and welcoming opportunities with open arms. Wishing you a fantastic year ahead.",
+  "Here's to a year brimming with moments that inspire, challenges that strengthen, and opportunities that lead to success. Wishing you a fantastic New Year filled with endless possibilities.",
+  "As the clock strikes midnight, may it herald a year of triumphs, opportunities, and the courage to pursue your passions. Wishing you a New Year brimming with determination and happiness. ",
+  "As the New Year unfolds, may it shower you with moments of serenity, success, and the determination to reach new heights. Here's to a year filled with wonderful opportunities.",
+  "Here's to a brand-new chapter waiting to be written. May the New Year bring you happiness, success, and the chance to script your own story. ",
+];
 
-    var globalvalue=0
-    // Function to get a random text from the array
-    function getRandomText() {
-      const randomIndex = Math.floor(Math.random() * texts.length);
-      globalvalue=randomIndex
-      return texts[randomIndex];
-    }
-    function getRandomText2() {
-      return texts2[globalvalue];
-    }
+const texts2 = [
+  "savor every victory you make along the way to your goals :) asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+  "Welcome to the magic of coding! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+  "Programming is fun! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+  "Keep learning and growing! asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we",
+  "The journey of a thousand miles begins with a single step. asdfdsf sadf sadf asdfasdf wefqwe rsadf sfas cxsasd fdsfwqefqwer sdaf asdf awe fqwer werwe fsadf sdf awer we"
+];
 
-    // Display a random text in the HTML element
-    const randomTextElement = document.getElementById('randomText');
-    randomTextElement.textContent = getRandomText();
+var globalvalue=0;
+
+function getRandomText() {
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  globalvalue=randomIndex
+  return texts[randomIndex];
+}
+
+function getRandomText2() {
+  return texts2[globalvalue];
+}
+
+const randomTextElement = document.getElementById('randomText');
+randomTextElement.textContent = getRandomText();
+
+const randomTextElement2 = document.getElementById('randomText2');
+randomTextElement2.textContent = getRandomText2();
+
+// --- Sparkles JS ---
+const mainText = document.querySelector('.main');
+const sparkleCount = 15; // number of sparkles
+
+for (let i = 0; i < sparkleCount; i++) {
+  const sparkle = document.createElement('div');
+  sparkle.className = 'sparkle';
+  mainText.appendChild(sparkle);
+
+  // Add custom data for upward movement and drift
+  sparkle.dataset.top = Math.random() * 100;      // vertical position in %
+  sparkle.dataset.left = Math.random() * 100;     // horizontal position in %
+  sparkle.dataset.speed = 0.05 + Math.random() * 0.15; // upward speed
+  sparkle.dataset.drift = (Math.random() - 0.5) * 0.05; // sideways drift
+  sparkle.style.opacity = Math.random() * 0.5 + 0.3;
+
+  sparkle.style.top = sparkle.dataset.top + '%';
+  sparkle.style.left = sparkle.dataset.left + '%';
+  sparkle.style.transform = `scale(${0.5 + Math.random()})`;
+}
+
+// Animate fireflies
+function animateFireflies() {
+  const sparkles = document.querySelectorAll('.sparkle');
+  sparkles.forEach(s => {
+    // Update positions
+    let top = parseFloat(s.dataset.top);
+    let left = parseFloat(s.dataset.left);
+
+    top -= parseFloat(s.dataset.speed); // float upward
+    if (top < -2) top = 100;            // reset to bottom
+
+    left += parseFloat(s.dataset.drift); // sideways drift
+    if (left < -2) left = 100;
+    if (left > 102) left = 0;
+
+    s.dataset.top = top;
+    s.dataset.left = left;
+
+    s.style.top = top + '%';
+    s.style.left = left + '%';
+
+    // Gentle flicker
+    s.style.opacity = 0.4 + 0.4 * Math.sin(Date.now() / 500 + Math.random());
+  });
+
+  requestAnimationFrame(animateFireflies);
+}
+
+animateFireflies();
   </script>
-
 </body>
 </html>
